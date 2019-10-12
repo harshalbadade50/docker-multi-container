@@ -9,14 +9,14 @@ script:
     - docker run -e CI=true harshalbadade50/docker-multi-container npm run test
 
 after_success:
-    - docker build -t harshalbadade50/multi-client ./client
-    - docker build -t harshalbadade50/multi-nginx ./nginx
-    - docker build -t harshalbadade50/multi-server ./server
-    - docker build -t harshalbadade50/multi-worker ./worker
+    - docker build -t harshalbadade/multi-client ./client
+    - docker build -t harshalbadade/multi-nginx ./nginx
+    - docker build -t harshalbadade/multi-server ./server
+    - docker build -t harshalbadade/multi-worker ./worker
     # Login to the Docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Take those image and push them to Docker Hub
-    - docker push harshalbadade50/multi-client:latest
-    - docker push harshalbadade50/multi-nginx:latest
-    - docker push harshalbadade50/multi-server:latest
-    - docker push harshalbadade50/multi-worker:latest
+    - docker push harshalbadade/multi-client
+    - docker push harshalbadade/multi-nginx
+    - docker push harshalbadade/multi-server
+    - docker push harshalbadade/multi-worker
