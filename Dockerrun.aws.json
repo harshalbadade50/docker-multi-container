@@ -6,21 +6,21 @@
             "image": "harshalbadade/multi-client",
             "hostname": "client",
             "essential": false,
-            "memory": 128
+            "memoryReservation": 256
         },
         {
             "name": "server",
             "image": "harshalbadade/multi-server",
             "hostname": "api",
             "essential": false,
-            "memory": 128
+            "memoryReservation": 256
         },
         {
             "name": "worker",
             "image": "harshalbadade/multi-worker",
             "hostname": "worker",
             "essential": false,
-            "memory": 128
+            "memoryReservation": 256
         },
         {
             "name": "nginx",
@@ -34,7 +34,7 @@
                 }
             ],
             "links": ["client","server"],
-            "memory": 128
+            "memoryReservation": 256
         }
     ]
 }
